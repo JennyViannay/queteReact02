@@ -3,17 +3,17 @@ import './App.css';
 import './contact.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './components/Navbar';
-import Citation from './components/Citation';
+import ContactList from './components/ContactList';
 
 function App() {
 
   return (
-    <div className="App">
-      <Navbar />
-      <hr />
-      <Citation />
+      <div className="App">
+        <Navbar />
+        <hr />
+        <ContactList />
       
-    </div>
+      </div>
   );
 }
 

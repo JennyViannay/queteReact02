@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Users from './Users';
 
-export default class Navbar extends Component {
-    users = [
-        {
-          name : "John",
-          status : true,
-          avatar : "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/37557628_1765612036868442_9043482348183617536_n.jpg?_nc_cat=103&_nc_oc=AQlwV-DPOH9mlNCb9HTtMF9iub1UzaE1KzMYNhFmhR8Yu2W1tSskSlIOEaD6GcBi0x8&_nc_ht=scontent-cdg2-1.xx&oh=22f76a26c05c3d12a81ad518e06e15cb&oe=5E29208F"
-        }
-      ];
+const user = 
+    {
+      name : "John",
+      status : true,
+      avatar : "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/37557628_1765612036868442_9043482348183617536_n.jpg?_nc_cat=103&_nc_oc=AQlwV-DPOH9mlNCb9HTtMF9iub1UzaE1KzMYNhFmhR8Yu2W1tSskSlIOEaD6GcBi0x8&_nc_ht=scontent-cdg2-1.xx&oh=22f76a26c05c3d12a81ad518e06e15cb&oe=5E29208F"
+    }; 
 
+export default class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,9 +41,11 @@ export default class Navbar extends Component {
                         </li>
                     </ul>
                     <div>
-                        {this.users.map(user => {
-                        return (<Users users = {user}/>)
-                        })}
+                    <Users 
+						 name = {user.name}
+						 avatar = {user.avatar}
+						 status = {user.status}
+				    />
                     </div>
                 </div>
             </nav>

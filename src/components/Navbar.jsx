@@ -1,52 +1,39 @@
 import React, { Component } from 'react';
 import Users from './Users';
+import MyCountdown from './MyCountdown';
 
 const user = 
     {
-      name : "John",
+      name : "Jenny",
       status : true,
-      avatar : "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/37557628_1765612036868442_9043482348183617536_n.jpg?_nc_cat=103&_nc_oc=AQlwV-DPOH9mlNCb9HTtMF9iub1UzaE1KzMYNhFmhR8Yu2W1tSskSlIOEaD6GcBi0x8&_nc_ht=scontent-cdg2-1.xx&oh=22f76a26c05c3d12a81ad518e06e15cb&oe=5E29208F"
+      avatar : "https://avatars3.githubusercontent.com/u/32166518?s=400&u=807a045773fff51619d0cb2e23d208a083e95660&v=4"
     }; 
 
 export default class Navbar extends Component {
+    state = {
+        id: this.props.id,
+        name: this.props.name,
+        status: this.props.status
+    }
+
     render() {
+        const { id, name, status } = this.state;
+        console.log(this.state);
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">QUETES REACT</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
-                    <div>
+                 <div>
                     <Users 
-						 name = {user.name}
-						 avatar = {user.avatar}
-						 status = {user.status}
-				    />
-                    </div>
+                            name = {user.name}
+                            avatar = {user.avatar}
+                            status = {user.status}
+                    />
+                </div>
+                <a className="navbar-brand" href="#">
+                    QUETES REACT ||
+                </a>
+                 
+                <div className="countdown">
+                    Temps restant avant le 02/04/2020 <MyCountdown />
                 </div>
             </nav>
         )

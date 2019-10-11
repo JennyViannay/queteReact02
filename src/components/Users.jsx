@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 export default class Users extends Component {
     render() {
         return(
@@ -15,8 +14,7 @@ export default class Users extends Component {
                         <div className="name">{this.props.name}</div>
                     </div>
                 </div>
-            </div>
-            
+            </div>    
         )
     }   
 }
